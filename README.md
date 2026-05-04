@@ -24,6 +24,12 @@ The system is built with clear separation of concerns:
 - **Main** → entry point
 
 ---
+## 🔧 Tech Stack
+- Python
+- subprocess (system command execution)
+- Object-Oriented Design (Abstraction, Contracts, Separation of Concerns)
+
+---
 
 ## How It Works
 Task → returns TaskResult → PipelineRunner decides next step 
