@@ -1,0 +1,95 @@
+Universal Task Runner — V1 Pseudocode (Clean & Focused)
+
+1️⃣ Status Contract
+ENUM Status:
+    SUCCESS
+    FAILURE
+
+    
+2️⃣ Task Result Contract
+CLASS TaskResult:
+
+    ATTRIBUTE status
+    ATTRIBUTE data        #👉👉👉 all these goes into result.py
+    ATTRIBUTE error
+
+    INIT(status, data=None, error=None)
+
+    RULES:
+        status must NEVER be None
+        data is optional
+        error is optional
+
+
+
+3️⃣ Base Task (Abstraction)
+ABSTRACT CLASS BaseTask:
+
+    ATTRIBUTE name
+
+    METHOD execute(context) RETURNS TaskResult
+
+Rules:      #👉👉👉 all these goes into base_task.py
+
+Every task must implement execute
+Must return TaskResult
+Must NOT raise unhandled exceptions
+Must NOT stop pipeline
+
+
+4️⃣ Concrete Task (Example: Shell Task)
+CLASS ShellTask EXTENDS BaseTask:
+
+    ATTRIBUTE command
+
+    METHOD execute(context):     #👉👉👉 this goes into shell_task.py
+
+        TRY:
+            run shell command safely
+
+            IF command failed:
+                RETURN TaskResult(FAILURE, error=stderr)
+
+            RETURN TaskResult(SUCCESS, data=stdout)
+
+        EXCEPT Exception as e:
+            RETURN TaskResult(FAILURE, error=e)
+
+
+5️⃣ Pipeline Runner (Core Engine)
+CLASS PipelineRunner:
+
+    ATTRIBUTE tasks_list
+    ATTRIBUTE context_dictionary
+
+    METHOD run():    #👉👉👉 this goes into pipelinerunner.py
+
+        FOR each task IN tasks_list:
+
+            print "Running:", task.name
+
+            result = task.execute(context_dictionary)
+
+            IF result.status == FAILURE:
+                print "Task failed:", task.name
+                RETURN result
+
+            store (result.data) in context_dictionary using task.name
+
+        RETURN TaskResult(SUCCESS, data=context_dictionary)
+
+6️⃣ Entry Point (main)
+CREATE tasks:
+
+    task1 = ShellTask(name="list_files", command="ls")
+    task2 = ShellTask(name="check_python", command="python --version")
+
+CREATE pipeline:
+
+    pipeline = PipelineRunner([task1, task2])
+
+RUN:        #👉👉👉 this also goes into pipelinerunner.py
+
+    result = pipeline.run()
+
+PRINT result
