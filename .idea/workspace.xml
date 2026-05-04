@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c5feebd-da28-40bc-b8c5-8b145095d677" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/UNIVERSAL_TASK_RUNNER.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CORE/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CORE/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CORE/base_task.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CORE/result.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CORE/tasks/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CORE/tasks/WORKFLOW/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CORE/tasks/WORKFLOW/pipeline.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CORE/tasks/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CORE/tasks/shell_task.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pseudo-code.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CORE/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/CORE/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
