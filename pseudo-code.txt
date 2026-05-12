@@ -93,3 +93,23 @@ RUN:        #👉👉👉 this also goes into pipelinerunner.py
     result = pipeline.run()
 
 PRINT result
+
+v1.1 upgrade.
+7️⃣ Python Task
+
+CLASS PythonTask EXTENDS BaseTask:
+
+    ATTRIBUTE function
+
+    INIT(name, function):
+        store task name
+        store function
+
+    METHOD execute(context):
+
+        TRY:
+            result = function(context)
+            RETURN TaskResult(SUCCESS, data=result)
+
+        EXCEPT Exception as error:
+            RETURN TaskResult(FAILURE, error=error)

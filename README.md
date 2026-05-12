@@ -12,6 +12,7 @@ A lightweight workflow engine that executes tasks sequentially with controlled f
 - Safe error capture (no crashes)
 - Shared context between tasks
 - Clean, readable output
+- Execute Python functions as tasks(v1.1)
 
 ---
 
@@ -56,6 +57,7 @@ Config-based workflows (YAML/JSON)
 ##  Project Status
 
 V1 — Core execution engine complete and tested.
+V1.1 — Added PythonTask support to prove task extensibility.
 
 ## Author Notes
 
