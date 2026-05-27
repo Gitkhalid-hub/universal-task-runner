@@ -12,8 +12,7 @@ A lightweight workflow engine that executes tasks sequentially with controlled f
 - Safe error capture (no crashes)
 - Shared context between tasks
 - Clean, readable output
-- Execute Python functions as tasks(v1.1)
-
+- Execute Python functions as tasks (V1.1)
 ---
 
 ## 🧠 Architecture
@@ -23,6 +22,43 @@ The system is built with clear separation of concerns:
 - **Tasks** → concrete implementations (ShellTask)
 - **Workflow** → execution engine (PipelineRunner)
 - **Main** → entry point
+
+## 🧠 Updated Architecture
+
+```text
+UNIVERSAL_TASK_RUNNER_V1/
+│
+├── CORE/
+│   ├── result.py
+│   ├── base_task.py
+│   │
+│   ├── tasks/
+│   │   ├── shell_task.py
+│   │   ├── python_task.py
+│   │   │
+│   │   └── WORKFLOW/
+│   │       └── pipeline.py
+│
+├── main.py
+├── README.md
+├── pseudocode.txt
+├── breakdown_engine.md
+├── requirements.txt
+└── .gitignore
+```
+
+### Architecture Layers
+
+| Layer | Responsibility |
+|---|---|
+| `result.py` | Defines structured task outcomes |
+| `base_task.py` | Defines the task execution contract |
+| `shell_task.py` | Executes terminal commands safely |
+| `python_task.py` | Executes Python functions as tasks |
+| `pipeline.py` | Controls execution flow and shared context |
+| `main.py` | Orchestrates the entire system |
+| `pseudocode.txt` | Planning and workflow reasoning |
+| `breakdown_engine.md` | Deep engineering dissection and debugging cognition |
 
 ---
 ## 🔧 Tech Stack

@@ -11,7 +11,7 @@ class PythonTask(BaseTask):
 		
 	def execute(self, context):
 		try:
-			result = self.function()
+			result = self.function(context)
 			return TaskResult.success(result)
 		
 		except Exception as err:
